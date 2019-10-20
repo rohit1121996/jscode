@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> 
+		Two Array Sorted order
+	</title> 
+</head> 
+
+<body> 
+	<div align="center" style="background-color: #B7A8A8;"> 
+		
+		<h1>Sorted order</h1> 
+		
+		<p>
+		arr1=['b','c','f','g']<br>
+		arr2=['a','d','e','h','i']
+		</p> 
+		
+		<h3> 
+			Given two sorted lowercase character arrays, combine them into a single sorted array in the sorted order
+		</h3> 
+		
+		<p id="Sort"> 
+			Click the button and view sorted order of two array 
+		</p><br> 
+		
+		<h3 id="array"></h3> 
+		
+		<input type="button" value="Click Here!" onclick="myArray()"> 
+	</div> 
+	
+	<script> 
+		function myArray() { 
+			var arr1=['b','c','f','g'];
+			var arr2=['a','d','e','h','i'];
+			document.getElementById('Sort').innerHTML 
+				= mergeTwo(arr1,arr2);
+	      function mergeTwo(arr1, arr2) {
+       let merged = [];
+  let first = 0;
+  let second = 0;
+  let cur = 0;
+
+  while (cur < (arr1.length + arr2.length)) {
+
+    let isArr1D = first >= arr1.length;
+    let isArr2D = second >= arr2.length;
+
+    if (!isArr1D && (isArr2D || (arr1[first] < arr2[second]))) {
+      merged[cur] = arr1[first];
+      first++;
+    } else {
+      merged[cur] = arr2[second];
+      second++;
+    }
+
+    cur++;
+  }
+
+  return merged;
+}
+}
+	</script> 
+</body> 
+</html>					 

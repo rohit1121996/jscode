@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title> 
+        Paranthesis Balanced or not
+    </title> 
+</head> 
+
+<body > 
+    <div align="center" style="background-color: #7089A5;"> 
+        
+        <h1>Balanced</h1> 
+        
+        <p>String is “[ ( ) ] [ ( ) ( ) ]”</p>
+        <br>
+        <p>String is “[ ( ) ] [ ( ( ) ]”</p>
+        
+        <p id="Balance"> 
+            Click the button to check String is balanced
+        </p> 
+        <input type="button" value="click " onclick="isBalanced()"> 
+    </div> 
+    <script> 
+          function isBalanced() {
+          var parensStr = document.getElementById('input-one');
+           var inputStr = parensStr.value
+             if (inputStr === null) { printToScreen(true); }
+             var expression = inputStr.split('');
+               var stack = [];
+             for (var i = 0; i < expression.length; i++) {
+              if (isParanthesis(expression[i])) {
+                 if (isOpenParenthesis(expression[i])) {
+                     stack.push(expression[i]);
+              } else {
+               if (stack.length === 0) {
+                 return printToScreen(false);
+              }
+            var top = stack.pop();
+             if (!matches(top, expression[i])) {
+          return printToScreen(false);
+        }
+      }
+    }
+  }
+</script> 
+</body> 
+</html>             

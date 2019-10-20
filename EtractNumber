@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> 
+		Extract number from string 
+	</title> 
+</head> 
+
+<body> 
+	<div align="center" style="background-color: green;"> 
+		
+		<h1>GeeksforGeeks</h1> 
+		
+		<p>String is "foo35bar5jhkj88"</p> 
+		
+		<h3> 
+			The string contains 3 numbers. So the numbers 
+			are stored in an array and print together 
+		</h3> 
+		
+		<p id="GFG"> 
+			Click the button to extract number 
+		</p><br> 
+		
+		<h3 id="Geeks"></h3> 
+		
+		<input type="button" value="Click Here!" onclick="myGeeks()"> 
+	</div> 
+	
+	<script> 
+		function myGeeks() { 
+			var str = "foo35bar5jhkj88"; 
+			matches = str.match(/\d+/g); 
+			var i=0 
+		
+			document.getElementById('GFG').innerHTML 
+				= matches[0] + matches[1] + matches[2]; 
+			
+			document.getElementById("Geeks").innerHTML 
+				= "Where 35 is the first, 5 is the second" 
+				+ " and 88 is the third number" 
+	} 
+	</script> 
+</body> 
+</html>					 

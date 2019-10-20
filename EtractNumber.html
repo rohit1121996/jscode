@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> 
+		Extract number from string  
+	</title> 
+</head> 
+
+<body > 
+	<div align="center" style="background-color: #7089A5;"> 
+		
+		<h1>Extract Number</h1> 
+		
+		<p>String is “2A53B24”</p> 
+		
+		<p id="Extract"> 
+			Click the button to extract number 
+		</p> 
+		
+		<input type="button" value="click " onclick="myString()"> 
+	</div> 
+	
+	<script> 
+		function myString() { 
+		var str = '2a53b24';
+        var a = str.split('');
+        document.getElementById('Extract').innerHTML 
+                        = extract(a); 
+      function extract(a){
+         for(let i = 0; i< a.length;i++){
+     
+            if(a[i] == 'a'){
+                 a[i-1] = parseInt(a[i-1]) + 1;
+                 a.splice(i,1);
+              }
+            if(a[i] == 'b'){
+                 a[i-1] = parseInt(a[i-1]) - 1;
+                 a.splice(i,1);
+              } 
+       } 
+       return a.toString().replace(/\,/g,"");
+}
+}
+</script> 
+</body> 
+</html>								 
